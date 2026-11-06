@@ -1,5 +1,18 @@
 import random
 
+def matrix_comparison(original_matrix,edited_matrix):
+    datos = ""
+    final_fila = -1
+    for fila in range(len(original_matrix)):
+        for columna in range(len(original_matrix[fila])):
+            datos = datos + str(original_matrix[fila][columna]).rjust(5)
+        datos = datos + "|".rjust(4)
+
+        inicio_fila = final_fila + 1
+        final_fila = edited_matrix.find("\n",inicio_fila)
+        datos = datos + edited_matrix[inicio_fila:final_fila]
+        datos = datos + "\n"
+    return datos
 
 #MATRIZ ALEATORIA:
 dimension = 4
@@ -29,7 +42,8 @@ for columna in range(dimension):
         #print(fila)
         datos = datos + str(matriz[fila][columna]).rjust(5)
     datos = datos + "\n"
-print(datos)
+
+print(matrix_comparison(matriz,datos))
 
 print("   -----------------")
 #MATRIZ INVERTIDA COLUMNAS
@@ -40,7 +54,7 @@ for fila in range(dimension):
         #print(fila)
         datos = datos + str(matriz[fila][columna]).rjust(5)
     datos = datos + "\n"
-print(datos)
+print(matrix_comparison(matriz,datos))
 
 print("   -----------------")
 #MATRIZ INVERTIDA FILAS
@@ -51,7 +65,7 @@ for fila in range(dimension-1, -1, -1):
         #print(fila)
         datos = datos + str(matriz[fila][columna]).rjust(5)
     datos = datos + "\n"
-print(datos)
+print(matrix_comparison(matriz,datos))
 
 print("   -----------------")
 #MATRIZ SUMA DE TODOS LOS ELEMENTOS DE LA MISMA FILA
@@ -65,4 +79,4 @@ for fila in range(dimension):
         #print(fila)
         datos = datos + str(total_fila-(matriz[fila][columna])).rjust(5)
     datos = datos + "\n"
-print(datos)
+print(matrix_comparison(matriz,datos))
