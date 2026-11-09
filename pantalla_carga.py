@@ -6,8 +6,8 @@ dimension = 10
 sbi = 4
 fila = random.randint(0, dimension-1)
 columna = random.randint(0, dimension-1)
-x_direction = random.randint(-1, 1)
-y_direction = random.randint(-1, 1)
+x_direction = random.randrange(-1, 2,2)
+y_direction = random.randrange(-1, 2, 2)
 
 for l_fila in range(dimension):
     lienzo.append([])

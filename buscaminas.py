@@ -70,24 +70,25 @@ while not exit:
             flg_010 = True
             flg_011 = True
             lifes_shown = (("--(0)--"*lifes).center(margin, "-"))
-            print(game_menu.format((" " * (sbi - 1)) + lifes_shown))
+            # mostrar matriu
+            datos = ""
+            final_fila = -1
+            for row in range(len(actual_matrix)):
+                for column in range(len(actual_matrix[row])):
+                    datos = datos + str(actual_matrix[row][column]).rjust(sbi)
+                datos = datos + "|".rjust(sbi)
+                for column in range(len(shown_matrix[row])):
+                    datos = datos + str(shown_matrix[row][column]).rjust(sbi)
+                datos = datos + "\n"
+            print(game_menu.format((" " * (sbi - 1)) + lifes_shown)+ "\n" + datos)
             while flg_010:
+                x = input("Type de X coordinate: ")
+                if x.isdigit():
+                    print()
                 flg_010 = False
 
             game_ended = True
 
-        #mostrar matriu
-        datos = ""
-        final_fila = -1
-        for row in range(len(actual_matrix)):
-            for column in range(len(actual_matrix[row])):
-                datos = datos + str(actual_matrix[row][column]).rjust(sbi)
-            datos = datos + "|".rjust(sbi)
-            for column in range(len(shown_matrix[row])):
-                datos = datos + str(shown_matrix[row][column]).rjust(sbi)
-            datos = datos + "\n"
-
-        print(datos)
         flg_01 = False
         flg_00 = True
 
