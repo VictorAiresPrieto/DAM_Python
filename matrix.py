@@ -120,8 +120,19 @@ for l_fila in range(dimension):
         for columna in range(dimension):
             if l_columna != columna:
                 lienzo[l_fila][l_columna] = lienzo[l_fila][l_columna] + matriz[l_fila][columna]
-print(matrix_comparison(matriz,lienzo, "matrix to matrix"))
 
+print(matrix_comparison(matriz,lienzo, "matrix to matrix"))
+lienzo = []
+for l_fila in range(dimension):
+    lienzo.append([])
+    for l_columna in range(dimension):
+        lienzo[l_fila].append(0)
+        for fila in range(dimension):
+            for columna in range(dimension):
+                if l_fila == fila and l_columna != columna or l_columna == columna and l_fila !=fila:
+                    lienzo[l_fila][l_columna] = lienzo[l_fila][l_columna] + (matriz[fila][columna])
+
+print(matrix_comparison(matriz,lienzo, "matrix to matrix"))
 #MATRIX SOLO LA DIAGONAL
 lienzo = []
 for l_fila in range(dimension):
@@ -146,3 +157,15 @@ for l_fila in range(dimension):
                 if l_columna != columna:
                     lienzo[l_fila][l_columna] = lienzo[l_fila][l_columna] + matriz[l_fila][columna]
 print(matrix_comparison(matriz,lienzo, "matrix to matrix"))
+
+#MATRIX SUMA DE LOS QUE RODEAN
+
+#for row in range(dimension):
+#    for column in range(dimension):
+#        if actual_matrix[row][column] == "M":
+#            for height in range(-1, 2):
+#                for width in range(-1, 2):
+#                    if 0 <= row + height < dimension and 0 <= column + width < dimension:
+#                        if actual_matrix[row + height][column + width] != "M":
+#                            actual_matrix[row + height][column + width] \
+#                                = actual_matrix[row + height][column + width] + 1

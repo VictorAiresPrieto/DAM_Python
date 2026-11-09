@@ -9,6 +9,8 @@ exit = False
 game_ended = False
 flg_00 = True
 flg_01 = False
+flg_010 = False
+flg_011 = False
 
 margin = dimension * sbi - (sbi - 1)
 opt_menu = ("MINESWEEPER".center(margin, "*").rjust(dimension * sbi) + "\n"
@@ -17,7 +19,7 @@ opt_menu = ("MINESWEEPER".center(margin, "*").rjust(dimension * sbi) + "\n"
             + " " * (sbi - 1) + ("*"*margin) + "\n"
             + " " * (sbi - 1))
 game_menu = ("MINESWEEPER".center(margin, "*").rjust(dimension * sbi) + "\n"
-            + ("<3"*lifes).center(margin, "*").rjust(dimension * sbi) + "\n")
+            + "{}")
 
 while not exit:
     while flg_00:
@@ -31,9 +33,9 @@ while not exit:
                 else:
                     exit = True
             else:
-                print("Index out of range")
+                print("*" * (sbi - 1) + "Index out of range")
         else:
-            print("Not numeric option")
+            print(" " * (sbi - 1) + "Not numeric option")
 
     while flg_01:
         # crear matriu jugador
@@ -65,9 +67,16 @@ while not exit:
                                     actual_matrix[row + height][column + width] \
                                         = actual_matrix[row + height][column + width] + 1
         while not game_ended:
-            print(game_menu)
+            flg_010 = True
+            flg_011 = True
+            lifes_shown = (("--(0)--"*lifes).center(margin, "-"))
+            print(game_menu.format((" " * (sbi - 1)) + lifes_shown))
+            while flg_010:
+                flg_010 = False
+
             game_ended = True
-        # mostrar matriu
+
+        #mostrar matriu
         datos = ""
         final_fila = -1
         for row in range(len(actual_matrix)):
@@ -77,6 +86,7 @@ while not exit:
             for column in range(len(shown_matrix[row])):
                 datos = datos + str(shown_matrix[row][column]).rjust(sbi)
             datos = datos + "\n"
+
         print(datos)
         flg_01 = False
         flg_00 = True
