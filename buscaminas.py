@@ -30,6 +30,7 @@ while not exit:
                 flg_00 = False
                 if opt == 1:
                     flg_01 = True
+                    lifes = 3
                 else:
                     exit = True
             else:
@@ -81,13 +82,36 @@ while not exit:
                     datos = datos + str(shown_matrix[row][column]).rjust(sbi)
                 datos = datos + "\n"
             print(game_menu.format((" " * (sbi - 1)) + lifes_shown)+ "\n" + datos)
+
             while flg_010:
                 x = input("Type de X coordinate: ")
                 if x.isdigit():
-                    print()
-                flg_010 = False
+                    x = int(x)
+                    if 0 <= x < dimension:
+                        flg_010 = False
+                    else:
+                        print(" " * sbi + "Index out of range")
+                else:
+                    print(" " * sbi + "Not numeric coordinate")
+            while flg_011:
+                y = input("Type de Y coordinate: ")
+                if y.isdigit():
+                    y = int(y)
+                    if 0 <= y < dimension:
+                        flg_011 = False
+                    else:
+                        print(" " * sbi + "Index out of range")
+                else:
+                    print(" " * sbi + "Not numeric coordinate")
 
-            game_ended = True
+            if actual_matrix[x][y] == "M":
+                lifes = lifes - 1
+            elif actual_matrix[x][y] == 0:
+                while 
+            shown_matrix[x][y] = actual_matrix[x][y]
+            if lifes == 0:
+                game_ended = True
+
 
         flg_01 = False
         flg_00 = True
