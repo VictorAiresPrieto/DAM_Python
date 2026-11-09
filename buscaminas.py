@@ -2,12 +2,14 @@ import random
 
 dimension = 10
 
+#crear matriu jugador
 shown_matrix = []
 for row in range(dimension):
     shown_matrix.append([])
     for column in range(dimension):
         shown_matrix[row].append("X")
 
+#crear matriu interna
 actual_matrix = []
 for row in range(dimension):
     actual_matrix.append([])
@@ -28,6 +30,7 @@ for row in range(dimension):
                         if actual_matrix[row + height][column + width] != "M":
                             actual_matrix[row + height][column + width] = actual_matrix[row + height][column + width] + 1
 
+#mostrar matriu
 datos = ""
 final_fila = -1
 for row in range(len(actual_matrix)):
