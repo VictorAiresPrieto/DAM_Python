@@ -82,7 +82,7 @@ amsc.mostrar_stats(matriz_r, matriz_g, matriz_b, comprimida_r, comprimida_g, com
 amsc.mostrar_stats(matriz_r, matriz_g, matriz_b, comprimida_r_alter, comprimida_g_alter, comprimida_b_alter)
 amsc.mostrar_stats(matriz_r, matriz_g, matriz_b, comprimida_r_alter2, comprimida_g_alter2, comprimida_b_alter2)
 # Guardar matriz comprimida
-amsc.matrices_a_imagen(comprimida_r, comprimida_g, comprimida_b, ruta_imagen_comprimida)
-amsc.matrices_a_imagen(comprimida_r_alter, comprimida_g_alter, comprimida_b_alter, "alter_" + ruta_imagen_comprimida)
-amsc.matrices_a_imagen(comprimida_r_alter2, comprimida_g_alter2, comprimida_b_alter2, "alter_2_" + ruta_imagen_comprimida)
+amsc.matrices_a_imagen(comprimida_r, comprimida_g, comprimida_b, "images/" + ruta_imagen_comprimida)
+amsc.matrices_a_imagen(comprimida_r_alter, comprimida_g_alter, comprimida_b_alter, "images/alter_" + ruta_imagen_comprimida)
+amsc.matrices_a_imagen(comprimida_r_alter2, comprimida_g_alter2, comprimida_b_alter2, "images/alter_2_" + ruta_imagen_comprimida)
 

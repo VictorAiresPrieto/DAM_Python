@@ -106,8 +106,8 @@ while not exit:
 
             if actual_matrix[x][y] == "M":
                 lifes = lifes - 1
-            elif actual_matrix[x][y] == 0:
-                while 
+#            elif actual_matrix[x][y] == 0:
+#                while
             shown_matrix[x][y] = actual_matrix[x][y]
             if lifes == 0:
                 game_ended = True
