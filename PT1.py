@@ -57,7 +57,7 @@ print("Ejercicio 6".center(50, "-")+"|")
 
 kilos_m = 7
 descuento = 0
-precio = 2
+precio = 3
 
 if 0 <= kilos_m <= 2:
       descuento = 0
@@ -68,6 +68,13 @@ elif 5 < kilos_m <= 10:
 elif kilos_m > 10:
       descuento = 20
 
+total = kilos_m * precio
+dinero_descontado = kilos_m * descuento * precio / 100
+total_descuento = kilos_m * precio - kilos_m * precio * descuento / 100
+print("Total sin descuento: {}\nDinero descontado: {}\nTotal con descuento: {}"
+      .format(total_descuento, descuento, dinero_descontado))
+
+print("Ejercicio 7".center(50, "-")+"|")
 
 
 
