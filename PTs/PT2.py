@@ -85,7 +85,7 @@ anno = random.randint(1900, 2100)
 
 meses_y_dias = {
     1: (31, "Enero"),
-    2: (28, "Febrero"),
+    2: (29, "Febrero"),
     3: (31, "Marzo"),
     4: (30, "Abril"),
     5: (31, "Mayo"),
@@ -97,20 +97,16 @@ meses_y_dias = {
     11: (30, "Noviembre"),
     12: (31, "Diciembre"),
 }
+
 mes_valido = True
-bisiesto = 0
+
 if not mes in meses_y_dias.keys():
     print("El mes {} no existe".format(mes))
-    mes_valido = False
-if mes==2 and dia==29:
-    if anno%4 != 0:
-        print("El dia {} de febrero no exite\nya que el año {} no es bisiesto".format(dia, anno))
-    else:
-        bisiesto = 1
-if mes_valido:
-    if 0 < dia-bisiesto <= meses_y_dias[mes][0]:
+else:
+    if mes == 2 and dia == 29 and anno % 4 != 0:
+        print("El dia {} de febrero no exite\n"
+              "ya que el año {} no es bisiesto".format(dia, anno))
+    if 0 < dia <= meses_y_dias[mes][0]:
         print("{} de {} de {}".format(dia, meses_y_dias[mes][1], anno))
-    elif bisiesto == 1:
+    else:
         print("El dia {} no exite".format(dia))
-print(dia,mes,anno)
-
