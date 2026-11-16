@@ -1,3 +1,5 @@
+import os
+
 tabla = 50
 
 print("|"+"Ejercicio 1".center(tabla, "-")+"|")
@@ -9,26 +11,28 @@ resta = num1 - num2
 multiplicacion = num1 * num2
 division = num1 / num2
 
-print("|Las operaciones se realizaran con: {} y {} ".ljust(tabla).format(num1,num2) + "|\n" +
-      "|La suma dara como resultado: {} ".ljust(tabla).format(suma) + "|\n" +
-      "|La resta dara como resultado: {} ".ljust(tabla).format(resta) + "|\n" +
-      "|La multiplicacion dara como resultado: {} ".ljust(tabla).format(multiplicacion) + "|\n" +
-      "|La division dara como resultado: {} ".format(division) + "|")
+print("Las operaciones se realizaran con: {} y {}\n"
+      "La suma dara como resultado: {}\n"
+      "La resta dara como resultado: {}\n"
+      "La multiplicacion dara como resultado: {}\n"
+      "La division dara como resultado: {}"
+      .format(num1, num2, suma, resta, multiplicacion, division))
 
-print("|"+"Ejercicio 2".center(50, "-")+"|")
+print("|" + "Ejercicio 2".center(50, "-")+"|")
 
-num = int(input("Ingrese un numero: "))
+num = 23
+#num = int(input("Ingrese un numero: "))
 
 print(num*num)
 
-print("Ejercicio 3".center(50, "-")+"|")
+print("|" + "Ejercicio 3".center(50, "-")+"|")
 
 if num%2 == 0:
       print("El numero es par")
 else:
       print("El numero es senar")
 
-print("Ejercicio 4".center(50, "-")+"|")
+print("|" + "Ejercicio 4".center(50, "-") + "|")
 if num < 5:
       print("Suspendido")
 elif 5 <= num < 6.5:
@@ -40,7 +44,7 @@ elif 8.5 <= num <= 10:
 else:
       print("No es valido")
 
-print("Ejercicio 5".center(50, "-")+"|")
+print("|" + "Ejercicio 5".center(50, "-")+"|")
 
 caracoles_d = 100
 caracoles_p = 10000
