@@ -1,4 +1,6 @@
-print("|"+"Ejercicio 1".center(50, "-")+"|")
+tabla = 50
+
+print("|"+"Ejercicio 1".center(tabla, "-")+"|")
 
 num1 = 10
 num2 = 20
@@ -7,12 +9,11 @@ resta = num1 - num2
 multiplicacion = num1 * num2
 division = num1 / num2
 
-print("|Las operaciones se realizaran con: {} y {}\n"
-      "|La suma dara como resultado: {}\n"
-      "|La resta dara como resultado: {}\n"
-      "|La multiplicacion dara como resultado: {}\n"
-      "|La division dara como resultado: {}\n"
-      .format(num1, num2, suma, resta, multiplicacion, division))
+print("|Las operaciones se realizaran con: {} y {} ".ljust(tabla).format(num1,num2) + "|\n" +
+      "|La suma dara como resultado: {} ".ljust(tabla).format(suma) + "|\n" +
+      "|La resta dara como resultado: {} ".ljust(tabla).format(resta) + "|\n" +
+      "|La multiplicacion dara como resultado: {} ".ljust(tabla).format(multiplicacion) + "|\n" +
+      "|La division dara como resultado: {} ".format(division) + "|")
 
 print("|"+"Ejercicio 2".center(50, "-")+"|")
 
