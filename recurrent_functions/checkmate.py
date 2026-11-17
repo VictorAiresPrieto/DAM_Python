@@ -7,8 +7,10 @@ def check_options(options):
                 break
             elif i == options:
                 print("Index out of range")
+                option = -1
     else:
         print("Not a valid input")
+        option = -1
     return option
 
 def check_type(b_value, b_type):
@@ -20,4 +22,3 @@ def check_type(b_value, b_type):
         if b_value.isalpha():
             is_valid = True
     return is_valid
-print(check_options(5))
