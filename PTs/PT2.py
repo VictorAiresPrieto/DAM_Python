@@ -106,7 +106,7 @@ else:
     if mes == 2 and dia == 29 and anno % 4 != 0:
         print("El dia {} de febrero no exite\n"
               "ya que el año {} no es bisiesto".format(dia, anno))
-    if 0 < dia <= meses_y_dias[mes][0]:
+    if 0 < dia <= int(meses_y_dias[mes][0]):
         print("{} de {} de {}".format(dia, meses_y_dias[mes][1], anno))
     else:
         print("El dia {} no exite".format(dia))
