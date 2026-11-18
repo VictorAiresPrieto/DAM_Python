@@ -17,6 +17,7 @@ flg_05 = False
 main_menu = ("Welcome to the User Management Program".center(50, "*") + "\n" +
              "1)Create user\n2)Modify user\n3)Show users\n4)Find user\n5)List users\n6)Exit")
 while not b_exit:
+
     while flg_00:
         option = check.check_options(6, main_menu)
         if option == 1:
