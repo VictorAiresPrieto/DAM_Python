@@ -37,20 +37,54 @@ while not b_exit:
             b_exit = True
 
     while flg_01:
-        nombre = ""
+        name = ""
         number = ""
         receipt = ""
-        more_receipts = True
-        while not check.check_type(nombre, "isalpha"):
-            nombre = input("Type the contacts name: ")
+
+        while not check.check_type(name, "isalpha"):
+            name = input("Type the contacts name: ")
         address = input("Type the contacts address: ")
+
         while not check.check_type(number, "isdigit"):
             number = input("Type the contacts number: ")
-        while more_receipts:
-            while not check.check_options(2)
-            while not check.check_type(receipt, "isdigit"):
-                receipt = input("Type the contacts receipt: ")
 
+        while not check.check_type(receipt, "isdigit"):
+            receipt = input("Type the contacts receipt: ")
+            if check.check_options(2) != 2:
+                receipt = ""
 
+        print(name, address, number, receipt)
+        flg_01 = False
+        flg_00 = True
 
+    while flg_02:
 
+        print("modifying user...")
+
+        flg_02 = False
+        flg_00 = True
+
+    while flg_03:
+
+        print("showing users...")
+        flg_03 = False
+        flg_00 = True
+
+    while flg_04:
+        print("finding users...")
+        flg_04 = False
+        flg_00 = True
+
+    while flg_05:
+        print("listing users...")
+        option = check.check_options(5)
+        if option == 1:
+            print("listing by dni...")
+        elif option == 2:
+            print("listing by name...")
+        elif option == 3:
+            print("listing by address...")
+        elif option == 4:
+            print("listing by purchase total...")
+        elif option == 5:
+            flg_05 = False
