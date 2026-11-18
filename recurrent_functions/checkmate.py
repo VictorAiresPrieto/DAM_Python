@@ -1,5 +1,5 @@
-def check_options(options):
-    option = input("Option: ")
+def check_options(options, menu):
+    option = input(menu + "\nOption: ")
     if check_type(option,"isdigit"):
         option = int(option)
         for i in range(1,options+1):
