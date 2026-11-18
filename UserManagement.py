@@ -14,6 +14,8 @@ flg_03 = False
 flg_04 = False
 flg_05 = False
 
+
+
 while not b_exit:
     while flg_00:
         option = check.check_options(6)
@@ -37,6 +39,7 @@ while not b_exit:
             b_exit = True
 
     while flg_01:
+
         name = ""
         number = ""
         receipt = ""
