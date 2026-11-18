@@ -17,6 +17,8 @@ flg_05 = False
 main_menu = ("Welcome to the User Management Program".center(50, "*") + "\n" +
              "1)Create user\n2)Modify user\n3)Show users\n4)Find user\n5)List users\n6)Exit")
 
+repeat_receipt_menu = "*"*50 + "\n" + "1)Continue adding receipts\n2)Exit"
+
 while not b_exit:
 
     while flg_00:
@@ -55,7 +57,7 @@ while not b_exit:
 
         while not check.check_type(receipt, "isdigit"):
             receipt = input("Type the contacts receipt: ")
-            if check.check_options(2) != 2:
+            if check.check_options(2, repeat_receipt_menu) != 2:
                 receipt = ""
 
         print(name, address, number, receipt)
