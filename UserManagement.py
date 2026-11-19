@@ -19,6 +19,8 @@ main_menu = ("Welcome to the User Management Program".center(50, "*") + "\n" +
 
 repeat_receipt_menu = "*"*50 + "\n" + "1)Continue adding receipts\n2)Exit"
 
+listing_options_menu = "*"*50 + "\n" + "1)List by DNI\n2)List by name\n3)List by address\n4)List by purchase total\n5)Exit"
+
 while not b_exit:
 
     while flg_00:
@@ -83,10 +85,22 @@ while not b_exit:
         flg_00 = True
 
     while flg_05:
-        print("listing users...")
-        option = check.check_options(5)
+        option = check.check_options(5, listing_options_menu)
         if option == 1:
             print("listing by dni...")
+            dni_list = list(usuarios.keys())
+            for j in range(len(dni_list)):
+                for i in range(len(dni_list)-1):
+                    if dni_list[i] > dni_list[i+1]:
+                        temp = dni_list[i]
+                        dni_list[i] = dni_list[i+1]
+                        dni_list[i+1] = temp
+            printing_list = "-"*50 + "\n"
+            for k in range(len(dni_list)):
+                printing_list = (printing_list +
+                                 dni_list[k].ljust(20) +
+                                 str(usuarios[dni_list[k]]["nombre"]).ljust(20) + "\n")
+            input(printing_list + "-"*50 + "\nPress any key to continue...")
         elif option == 2:
             print("listing by name...")
         elif option == 3:
@@ -95,3 +109,4 @@ while not b_exit:
             print("listing by purchase total...")
         elif option == 5:
             flg_05 = False
+            flg_00 = True
