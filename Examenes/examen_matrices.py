@@ -1,113 +1,147 @@
 import random
 
 tamanno = 50
+e = 5
+if e == 1:
+    print("|" + "Ejercici1".center(tamanno, "*") + "|")
 
-print("|" + "Ejercici1".center(tamanno, "*") + "|")
+    list = []
+    for i in range(5):
+        list.append(random.randint(1, 100))
 
-list = []
-for i in range(5):
-    list.append(random.randint(1, 100))
+    for j in range(len(list)):
+        for k in range(len(list) - j - 1):
+            if list[k] > list[k + 1]:
+                temp = list[k]
+                list[k] = list[k + 1]
+                list[k + 1] = temp
+    print(list)
+elif e == 2:
+    print("|" + "Ejercici2".center(tamanno, "*") + "|")
+    list = []
+    for i in range(5):
+        list.append(random.randint(1, 100))
 
-for j in range(len(list)):
-    for k in range(len(list) - j - 1):
-        if list[k] > list[k + 1]:
-            temp = list[k]
-            list[k] = list[k + 1]
-            list[k + 1] = temp
-print(list)
+    for j in range(len(list)):
+        for k in range(len(list) - j - 1):
+            if list[k] > list[k + 1]:
+                temp = list[k]
+                list[k] = list[k + 1]
+                list[k + 1] = temp
+    print(list)
 
-print("|" + "Ejercici2".center(tamanno, "*") + "|")
+    for l in range(len(list)):
+        for m in range(len(list) - 1 , 0 + l , -1):
+            if list[m] > list[m - 1]:
+                temp = list[m - 1]
+                list[m - 1] = list[m]
+                list[m] = temp
+    print(list)
+elif e == 3:
+    print("|" + "Ejercici3".center(tamanno, "*") + "|")
 
-for l in range(len(list)):
-    for m in range(len(list) - 1 , 0 + l , -1):
-        if list[m] > list[m - 1]:
-            temp = list[m - 1]
-            list[m - 1] = list[m]
-            list[m] = temp
-print(list)
-
-print("|" + "Ejercici3".center(tamanno, "*") + "|")
-
-dimension = 3
-matrix = []
-for fila in range (dimension):
-    matrix.append([])
-    for columna in range (dimension):
-        matrix[fila].append(random.randint(1, 100))
-shown_matrix = ""
-for shown_fila in range (dimension):
-    for shown_columna in range (dimension):
-        shown_matrix = shown_matrix + str(matrix[shown_fila][shown_columna]).rjust(4)
-    shown_matrix = shown_matrix + "\n"
-print(shown_matrix)
-
-print("|" + "Ejercici4".center(tamanno, "*") + "|")
-
-matrix_e4 = matrix.copy()
-for columna in range (dimension):
+    dimension = 3
+    matrix = []
     for fila in range (dimension):
-        for acolumna in range (dimension - 1):
-            if matrix_e4[acolumna][fila] > matrix_e4[acolumna + 1][fila]:
-                temp = matrix_e4[acolumna][fila]
-                matrix_e4[acolumna][fila] = matrix_e4[acolumna+1][fila]
-                matrix_e4[acolumna + 1][fila] = temp
+        matrix.append([])
+        for columna in range (dimension):
+            matrix[fila].append(random.randint(1, 100))
+    shown_matrix = ""
+    for shown_fila in range (dimension):
+        for shown_columna in range (dimension):
+            shown_matrix = shown_matrix + str(matrix[shown_fila][shown_columna]).rjust(4)
+        shown_matrix = shown_matrix + "\n"
+    print(shown_matrix)
+elif e == 4:
+    print("|" + "Ejercici4".center(tamanno, "*") + "|")
 
-shown_matrix = ""
-for shown_fila in range(dimension):
-    for shown_columna in range(dimension):
-        shown_matrix = shown_matrix + str(matrix_e4[shown_fila][shown_columna]).rjust(4)
-    shown_matrix = shown_matrix + "\n"
-print(shown_matrix)
-
-print("|" + "Ejercici5".center(tamanno, "*") + "|")
-
-matrix_e5 = matrix.copy()
-for columna in range (dimension):
+    dimension = 3
+    matrix_e4 = []
     for fila in range (dimension):
-        for acolumna in range (dimension - 1, 0, -1):
-            if matrix_e5[acolumna][fila] > matrix_e5[acolumna - 1][fila]:
-                temp = matrix_e5[acolumna][fila]
-                matrix_e5[acolumna][fila] = matrix_e5[acolumna - 1][fila]
-                matrix_e5[acolumna - 1][fila] = temp
+        matrix_e4.append([])
+        for columna in range (dimension):
+            matrix_e4[fila].append(random.randint(1, 100))
+    shown_matrix = ""
+    for shown_fila in range (dimension):
+        for shown_columna in range (dimension):
+            shown_matrix = shown_matrix + str(matrix_e4[shown_fila][shown_columna]).rjust(4)
+        shown_matrix = shown_matrix + "\n"
+    print(shown_matrix)
 
-shown_matrix = ""
-for shown_fila in range(dimension):
-    for shown_columna in range(dimension):
-        shown_matrix = shown_matrix + str(matrix_e5[shown_fila][shown_columna]).rjust(4)
-    shown_matrix = shown_matrix + "\n"
-print(shown_matrix)
+    for columna in range(dimension):
+        for pasada in range (dimension-1):
+            for i in range (dimension - 1 - pasada):
+                if matrix_e4[i][columna] > matrix_e4[i+1][columna]:
+                    temp = matrix_e4[i][columna]
+                    matrix_e4[i][columna] = matrix_e4[i+1][columna]
+                    matrix_e4[i+1][columna] = temp
+    shown_matrix = ""
+    for shown_fila in range(dimension):
+        for shown_columna in range(dimension):
+            shown_matrix = shown_matrix + str(matrix_e4[shown_fila][shown_columna]).rjust(4)
+        shown_matrix = shown_matrix + "\n"
+    print(shown_matrix)
+elif e == 5:
+    print("|" + "Ejercici5".center(tamanno, "*") + "|")
 
-print("|" + "Ejercici6".center(tamanno, "*") + "|")
+    dimension = 3
+    matrix_e5 = []
+    for fila in range (dimension):
+        matrix_e5.append([])
+        for columna in range (dimension):
+            matrix_e5[fila].append(random.randint(1, 100))
+    shown_matrix = ""
+    for shown_fila in range (dimension):
+        for shown_columna in range (dimension):
+            shown_matrix = shown_matrix + str(matrix_e5[shown_fila][shown_columna]).rjust(4)
+        shown_matrix = shown_matrix + "\n"
+    print(shown_matrix)
 
-dimension = 4
-matrix = []
-for fila in range (dimension):
-    matrix.append([])
-    for columna in range (dimension):
-        matrix[fila].append(random.randint(1, 4))
-shown_matrix = ""
-for shown_fila in range (dimension):
-    for shown_columna in range (dimension):
-        shown_matrix = shown_matrix + str(matrix[shown_fila][shown_columna]).rjust(4)
-    shown_matrix = shown_matrix + "\n"
-print(shown_matrix)
+    for columna in range(dimension):
+        for pasada in range (dimension-1):
+            for i in range (dimension - 1, pasada, -1):
+                if matrix_e5[i][columna] > matrix_e5[i-1][columna]:
+                    temp = matrix_e5[i][columna]
+                    matrix_e5[i][columna] = matrix_e5[i-1][columna]
+                    matrix_e5[i-1][columna] = temp
+    shown_matrix = ""
+    for shown_fila in range(dimension):
+        for shown_columna in range(dimension):
+            shown_matrix = shown_matrix + str(matrix_e5[shown_fila][shown_columna]).rjust(4)
+        shown_matrix = shown_matrix + "\n"
+    print(shown_matrix)
+elif e == 6:
+    print("|" + "Ejercici6".center(tamanno, "*") + "|")
 
-matrix_e6 = []
-for fila in range (dimension):
-    matrix_e6.append([])
-    for columna in range (dimension):
-        matrix_e6[fila].append(0)
+    dimension = 4
+    matrix = []
+    for fila in range (dimension):
+        matrix.append([])
+        for columna in range (dimension):
+            matrix[fila].append(random.randint(1, 4))
+    shown_matrix = ""
+    for shown_fila in range (dimension):
+        for shown_columna in range (dimension):
+            shown_matrix = shown_matrix + str(matrix[shown_fila][shown_columna]).rjust(4)
+        shown_matrix = shown_matrix + "\n"
+    print(shown_matrix)
 
-for fila in range (dimension):
-    for columna in range (dimension):
-        if matrix[fila][columna] % 2 == 0:
-            for p in range(dimension):
-                if p != columna:
-                    matrix_e6[fila][p] = matrix_e6[fila][p] + 1
+    matrix_e6 = []
+    for fila in range (dimension):
+        matrix_e6.append([])
+        for columna in range (dimension):
+            matrix_e6[fila].append(0)
 
-shown_matrix = ""
-for shown_fila in range (dimension):
-    for shown_columna in range (dimension):
-        shown_matrix = shown_matrix + str(matrix_e6[shown_fila][shown_columna]).rjust(4)
-    shown_matrix = shown_matrix + "\n"
-print(shown_matrix)
+    for fila in range (dimension):
+        for columna in range (dimension):
+            if matrix[fila][columna] % 2 == 0:
+                for p in range(dimension):
+                    if p != columna:
+                        matrix_e6[fila][p] = matrix_e6[fila][p] + 1
+
+    shown_matrix = ""
+    for shown_fila in range (dimension):
+        for shown_columna in range (dimension):
+            shown_matrix = shown_matrix + str(matrix_e6[shown_fila][shown_columna]).rjust(4)
+        shown_matrix = shown_matrix + "\n"
+    print(shown_matrix)
