@@ -1,4 +1,5 @@
 import recurrent_functions.checkmate as check
+import recurrent_functions.sorter as sort
 
 letrasDni = ['T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E']
 usuario1 = {"nombre":"Pedro Javier Morales",  "direccion": "Flores 36 8º 2º", "tfn":["+0034345345345"],"compras":[1234,423,23]}
@@ -14,13 +15,17 @@ flg_03 = False
 flg_04 = False
 flg_05 = False
 
+separator = "*" * 50
+separator_alter = "-" * 50
+
 main_menu = ("Welcome to the User Management Program".center(50, "*") + "\n" +
              "1)Create user\n2)Modify user\n3)Show users\n4)Find user\n5)List users\n6)Exit")
 
-repeat_receipt_menu = "*"*50 + "\n" + "1)Continue adding receipts\n2)Exit"
+repeat_receipt_menu = ("{}\n1)Continue adding receipts\n2)Exit\n{}"
+                       .format(separator, separator_alter))
 
-listing_options_menu = "*"*50 + "\n" + "1)List by DNI\n2)List by name\n3)List by address\n4)List by purchase total\n5)Exit"
-
+listing_options_menu = ("{}\n1)List by DNI\n2)List by name\n3)List by address\n4)List by purchase total\n5)Exit\n{}"
+                        .format(separator, separator_alter))
 while not b_exit:
 
     while flg_00:
@@ -86,23 +91,15 @@ while not b_exit:
 
     while flg_05:
         option = check.check_options(5, listing_options_menu)
+        printing_list = ""
         if option == 1:
-            print("listing by dni...")
-            dni_list = list(usuarios.keys())
-            for j in range(len(dni_list)):
-                for i in range(len(dni_list)-1):
-                    if dni_list[i] > dni_list[i+1]:
-                        temp = dni_list[i]
-                        dni_list[i] = dni_list[i+1]
-                        dni_list[i+1] = temp
-            printing_list = "-"*50 + "\n"
-            for k in range(len(dni_list)):
-                printing_list = (printing_list +
-                                 dni_list[k].ljust(20) +
-                                 str(usuarios[dni_list[k]]["nombre"]).ljust(20) + "\n")
-            input(printing_list + "-"*50 + "\nPress any key to continue...")
+            printing_list =  sort.sorting_dict_keys(usuarios, "nombre")
+            first_row = "ID"
+            second_row = "Name"
         elif option == 2:
             print("listing by name...")
+            first_row = "Name"
+            second_row = "Address"
         elif option == 3:
             print("listing by address...")
         elif option == 4:
@@ -110,3 +107,5 @@ while not b_exit:
         elif option == 5:
             flg_05 = False
             flg_00 = True
+        input("{}\n{:20}{:30}\n{}\n{}{}\n"
+              .format(separator, first_row, second_row, separator_alter, printing_list, separator))

@@ -1,7 +1,7 @@
 import random
 
 tamanno = 50
-e = 5
+e = 6
 if e == 1:
     print("|" + "Ejercici1".center(tamanno, "*") + "|")
 
