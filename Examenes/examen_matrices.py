@@ -1,7 +1,16 @@
 import random
+from itertools import repeat
+
+import recurrent_functions.checkmate as check
 
 tamanno = 50
-e = 6
+correct = False
+while not correct:
+    e = input("Introduce el numero del ejercicio\nque deseas ejecutar: ")
+    if check.check_type(e,"isdigit"):
+        e = int(e)
+        correct = True
+
 if e == 1:
     print("|" + "Ejercici1".center(tamanno, "*") + "|")
 
