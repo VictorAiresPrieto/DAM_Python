@@ -25,7 +25,7 @@ repeat_receipt_menu = ("{}\n1)Continue adding receipts\n2)Exit\n{}"
                        .format(separator, separator_alter))
 
 listing_options_menu = ("{}\n1)List by DNI\n2)List by name\n3)List by address\n4)List by purchase total\n5)Exit\n{}"
-                        .format(separator, separator_alter))
+                        .format(separator, separator_alter))xº
 while not b_exit:
 
     while flg_00:
@@ -97,7 +97,8 @@ while not b_exit:
             first_row = "ID"
             second_row = "Name"
         elif option == 2:
-            print("listing by name...")
+            printing_list = sort.sorting_dict_items(usuarios, "nombre", "direccion")
+            first_row = "ID"
             first_row = "Name"
             second_row = "Address"
         elif option == 3:

@@ -1,6 +1,7 @@
 def sorting_dict_items(dict, item1_name, item2_name):
     printing_list = ""
-    item1_list = dict.get(item1_name)
+    item1_list = str(dict.items())
+    printing_list = (printing_list + item1_list.ljust(20))
 
     return printing_list
 
