@@ -25,7 +25,7 @@ repeat_receipt_menu = ("{}\n1)Continue adding receipts\n2)Exit\n{}"
                        .format(separator, separator_alter))
 
 listing_options_menu = ("{}\n1)List by DNI\n2)List by name\n3)List by address\n4)List by purchase total\n5)Exit\n{}"
-                        .format(separator, separator_alter))xº
+                        .format(separator, separator_alter))
 while not b_exit:
 
     while flg_00:
